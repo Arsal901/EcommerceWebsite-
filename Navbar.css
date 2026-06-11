@@ -634,6 +634,10 @@ h1 {
 
 }
 
+.cartitem p { 
+    color: goldenrod;
+}
+
 .cartItem:hover {
     transform: translateY(-5px);
 }
