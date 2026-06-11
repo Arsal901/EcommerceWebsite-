@@ -7,7 +7,7 @@
 .MainContainer {
     display: flex;
     justify-content: space-between; 
-    gap: 5px;
+    gap: 5px; 
     background-color: white;
     height: 3.5rem;
     border-bottom: 2px solid rgb(89, 87, 87);
@@ -87,7 +87,7 @@ h1 {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    z-index: 999;
+    z-index: 1005; 
     overflow: hidden;
     transition: transform 0.4s ease;
 }
