@@ -592,7 +592,7 @@ h1 {
     position: absolute; 
     margin-top: 60px;
     margin-left: 160px;
-    color: goldenrod;
+    background-color: palevioletred;
 
 }
 
@@ -634,9 +634,7 @@ h1 {
 
 }
 
-.cartitem p { 
-    color: goldenrod;
-}
+
 
 .cartItem:hover {
     transform: translateY(-5px);
@@ -662,15 +660,13 @@ h1 {
 }
 
 .cartItem p {
-    /* color: rgb(2, 125, 33); */
-    color: goldenrod;
     font-size: 1.0rem;
     font-weight: bolder;
     position: absolute;
     top: 53px; 
     left: 75px;
   
-    
+     
 }
 
 
@@ -730,7 +726,7 @@ h1 {
     position: absolute;
     margin-top: 38px;
     margin-left: 140px;
- 
+    background-color: red; 
     
 
 }
