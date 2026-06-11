@@ -107,14 +107,14 @@
 .Clothing, .Books, .Gifts, .Perfumes{
  
   margin-top: 0px;
-  width: 170px;/
+  width: 170px; 
 
  }
    
   
 
  .Clothing h3, .Books h3, .Gifts h3{
-    font-size: 0.81rem;
+    font-size: 0.81rem; 
     width: 75px; 
     font-family: 'Courier New', Courier, monospace;
  }
