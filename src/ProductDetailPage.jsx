@@ -52,9 +52,9 @@ function ProductDetailPage({handleAddToCartProductdetailPage, setOpenCartBar}) {
       { id: 3, img: "/Hadith3.jpeg" }, 
       { id: 4, img: "/Hadith4.PNG" },
       { id: 5, img: "/Hadith5.PNG" },
-    ],
+    ], 
     3: [
-      { id: 1, img: "/Trace1.PNG", onetitle:"Trace Quran (Writable Quran) – Write, Learn & Connect with the Holy Quran",  price:699, offer:"₹1399", discount:"26%OFF", rating:"4", 
+      { id: 1, img: "/Trace4.PNG", title:"Trace Quran (Writable Quran) – Write, Learn & Connect with the Holy Quran",  price:699, offer:"₹1399", discount:"26%OFF", rating:"4", 
         Mainheading:`Write, Learn & Connect with the Holy Quran`,
         description:`The Trace Quran (Writable Quran) is a beautiful and engaging way to connect with the Holy Quran on a deeper
          level. This unique tracing Quran allows you to write the Quran while reading it, helping you improve focus, strengthen 
@@ -63,7 +63,7 @@ function ProductDetailPage({handleAddToCartProductdetailPage, setOpenCartBar}) {
         },
       { id: 2, img: "/Trace2.PNG" },
       { id: 3, img: "/Trace3.WEBP" },
-      { id: 4, img: "/Trace4.PNG" },
+      { id: 4, img: "/Trace1.PNG" },
       { id: 5, img: "/Trace5.PNG" }, 
       { id: 6, img: "/Trace6.WEBP" },
       { id: 7, img: "/Trace7.WEBP" },
@@ -129,7 +129,6 @@ const product = {
      <div className="LeftSide">
      <h2>{product?.title}</h2>
 
-     <h2>{product?.onetitle}</h2>  {/* for Trace Quran only */}
      
 
      <div className="RatingBox"> 
