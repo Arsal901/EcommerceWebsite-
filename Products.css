@@ -1,0 +1,154 @@
+ * {
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+ }
+
+
+ .TagsSection {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   display: flex;
+   gap: 15px;
+   /* background-color: brown; */
+   height: 8vh;
+   
+ }
+
+ .Clothing, .Books, .Gifts, .Perfumes{
+   font-size: 1rem;
+   margin: 10px 10px;
+   width: 150px; 
+   padding-left: 5px;
+   /* padding: 4px 10px; */
+   border: 0px solid rgb(134, 132, 132); 
+   height: 5vh;
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.362);
+   cursor: pointer;
+
+ }
+
+ .Clothing {
+  background-color: rgba(0, 136, 255, 0.334);
+ }
+
+  .Books  {
+    background-color: rgba(116, 255, 47, 0.54);
+  }
+
+   .Gifts {
+    background-color: rgba(137, 43, 226, 0.529);
+   }
+
+   .Perfumes {
+        color: white;
+        background-color: rgb(246, 21, 9);
+   }
+
+ .Clothing h3, .Books h3, .Gifts h3, .Perfumes h3{
+    font-size: 1.2rem; 
+    width: 90px; 
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif ; */
+ }
+
+
+ .Clothicon {
+   color: white;
+     background-color: rgba(10, 109, 239, 0.968);
+ }
+
+ .Bookicon {
+   color: white;
+     background-color: rgba(3, 160, 48, 0.968);
+ }
+
+ .Gifticon {
+   color: white;
+     background-color: rgba(138, 43, 233, 0.968);
+ }
+
+ .Perfumeicon {
+         background-color: rgba(238, 103, 103, 0.964);
+
+ }
+
+  .Clothicon, .Bookicon, .Gifticon, .Perfumeicon {
+  width: 25px;
+   font-size: 1.52rem;
+   border-radius: 20px;
+   padding: 4px; 
+ }
+
+ @media screen and (min-width:320px) and (max-width:768px) { 
+    .Gifts h3 {
+      font-size: 0.9rem; 
+    }
+
+.TagsSection {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   display: flex;
+   padding: 10px 0px;
+   gap: 5px;
+   /* background-color: brown; */
+   height: 8vh;
+} 
+
+.Clothing, .Books, .Gifts, .Perfumes{
+ 
+  margin-top: 0px;
+  width: 170px;/
+
+ }
+   
+  
+
+ .Clothing h3, .Books h3, .Gifts h3{
+    font-size: 0.81rem;
+    width: 75px; 
+    font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .Perfumes h3 {
+  font-size: 0.95rem;
+  width: 70px;
+ }
+
+ .Clothicon, .Bookicon, .Gifticon, .Perfumeicon {
+  width: 25px;
+   font-size: 1.52rem;
+   border-radius: 20px;
+   padding: 4px; 
+ }
+
+ .Clothicon {
+   color: white;
+     background-color: rgba(10, 109, 239, 0.968);
+ }
+
+ .Bookicon {
+   color: white;
+     background-color: rgba(3, 160, 48, 0.968);
+ }
+
+ .Gifticon {
+   color: white;
+     background-color: rgba(138, 43, 233, 0.968);
+ }
+
+ .Perfumeicon {
+         background-color: rgba(238, 103, 103, 0.964);
+
+ }
+
+  }

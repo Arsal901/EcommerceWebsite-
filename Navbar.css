@@ -1,0 +1,918 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.MainContainer {
+    display: flex;
+    justify-content: space-between; 
+    gap: 5px;
+    background-color: white;
+    height: 3.5rem;
+    border-bottom: 2px solid rgb(89, 87, 87);
+}
+
+.hamburgerIcon {
+    font-size: 1.8rem;
+    border: 1px solid rgb(173, 170, 170);
+    border-radius: 10px;
+    padding: 4px;
+    cursor: pointer;
+    color: black;
+    transition: 0.4s ease; 
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.hamburgerIcon:hover {
+    transform: scale(1.04);
+    border-color: black;
+}
+
+.Shopcart {
+    font-size: 2rem;
+    border: 1px solid rgb(182, 179, 179);
+    border-radius: 10px;
+    padding: 6px;
+    cursor: pointer;
+    color: black;
+    transition: 0.4s ease; 
+    margin-right: 15px;
+    margin-top: 12px;
+}
+
+
+.Shopcart:hover {
+    transform: scale(1.04);
+    border-color: black;
+}
+
+
+h1 {
+    font-size: 1.3rem;
+    color: goldenrod;
+    text-align: center;
+    margin: 18px auto; 
+    cursor: pointer; 
+}
+
+.HomeLink {
+    text-decoration: none; 
+}
+
+
+/* SideBar  */
+
+ /* .SideBar {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: aliceblue;
+    width: 300px;
+    max-width: 80%;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}  */
+
+.SideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
+    width: 350px;
+    max-width: 85%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+
+.ShowSideBar {
+    transform: translateX(0%);
+}
+
+.HideSideBar {
+    transform: translateX(-100%); 
+}
+
+
+.first {
+    /* background: linear-gradient(295deg, green, darkgreen, rgba(4, 4, 4, 0.849)); */
+    height: 170px;
+    background: linear-gradient(135deg, #141e30, #243b55);
+
+}
+
+
+.Cancelicon {
+    font-size: 2rem; 
+    background-color: transparent;
+    color: gainsboro;
+    border-radius: 50%;
+    padding: 6px;
+    position: absolute;
+    right: 20px;
+    top: 25px; 
+    border: 1.5px solid gainsboro;
+    cursor: pointer;
+}
+
+.usericon {
+    background-color: rgb(229, 164, 0);
+    border-radius: 60%;
+    color: black;
+    font-size: 3rem;
+    margin-top: 30px;
+    margin-left: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.first h1 {
+    text-align: left;
+    margin-left: 14px;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.first p {
+    color: rgb(181, 179, 179);
+    font-size: 0.9rem;
+    margin-left: 12px;
+    margin-top: -12px;
+}
+
+
+/* sideBarMenus */
+
+.sideBarMenus {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 0px; /* space for footer */
+    margin: 10px 10px; 
+}
+
+
+
+
+.second h4 {
+    color: goldenrod;
+}
+
+.second p {
+    width: 170px;
+    border: 0.01px solid rgba(44, 43, 43, 0.19);
+    text-align: center;
+    margin-left: 60px;
+    margin-top: -7px;
+}
+
+.SideBarHome {
+    text-decoration: none;
+}
+
+.Homeicon {
+    background-color: rgba(89, 226, 155, 0.693);
+    font-size: 1.75rem;
+    border-radius: 10px;
+    padding: 3.9px;
+}
+
+.Shopicon {
+    background-color: rgba(211, 158, 34, 0.693);
+    font-size: 1.75rem;
+    border-radius: 10px;
+    padding: 3.9px;
+}
+
+.Carticon {
+    background-color: rgba(10, 174, 239, 0.693); 
+    font-size: 1.75rem;
+    border-radius: 10px;
+    padding: 3.9px;
+}
+
+
+
+.Home, .Shop, .Cart {
+    width: 270px;
+    max-width: 90%;
+    /* width: 17rem; */
+    height: 6.5vh;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    font-size: 0.71rem;
+    color: #0f1724;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 10px;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer; 
+    transition: 0.6s ease;
+}
+
+.Home:hover {
+    background-color: rgba(89, 226, 155, 0.444);
+}
+
+
+.Shop:hover {
+    background-color: rgba(211, 158, 34, 0.422);
+}
+
+
+.Cart:hover {
+     background-color: rgba(10, 174, 239, 0.371);
+}
+
+
+
+
+/* /Sidebarfooter  */
+
+.Sidebarfooter {
+    position: relative;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    width: 100%;
+    /* max-width: 100%; */
+    height: 7vh;
+    bottom: 0%;
+}
+
+.Sidebarfooter h4 {
+    position: absolute;
+    top: 20px;
+    left: 60px; 
+    text-align: center;
+    color:white
+}
+
+
+/* third */
+
+.Third {
+    margin-top: 30px;
+}
+
+.Third h4 {
+    color: goldenrod;
+}
+
+.Third p {
+    width: 170px;
+    border: 0.01px solid rgba(44, 43, 43, 0.19);
+    text-align: center;
+    margin-left: 60px;
+    margin-top: -7px;
+}
+
+.Accounticon {
+    background-color: rgba(244, 83, 247, 0.693);
+    font-size: 1.75rem;
+    border-radius: 10px;
+    padding: 3.9px;
+}
+
+.Ordericon {
+    background-color: rgba(25, 170, 248, 0.693);
+    font-size: 1.75rem;
+    border-radius: 10px;
+    padding: 3.9px;
+}
+
+.Wishlisticon {
+    background-color: rgba(47, 242, 96, 0.542);
+    font-size: 1.75rem;
+    border-radius: 10px;
+    padding: 3.9px;
+}
+
+
+
+.MyAccount, .Order , .Wishlist {
+    width: 270px;
+    max-width: 90%;
+    /* width: 17rem; */
+    height: 6.5vh;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    font-size: 0.71rem;
+    color: #0f1724;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 10px;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer; 
+    transition: 0.6s ease;
+}
+
+.MyAccount:hover {
+    background-color: rgba(244, 83, 247, 0.693);
+}
+
+
+.Order:hover {
+    background-color: rgba(25, 170, 248, 0.693);
+}
+
+
+.Wishlist:hover {
+    background-color: rgba(47, 242, 96, 0.542);
+}
+
+
+
+/* overlay to blur  */
+
+.overlay { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: auto; /* IMPORTANT */
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4); /* dark layer */
+    backdrop-filter: blur(5px);      /* blur effect */
+    z-index: 998;
+}
+
+
+
+
+/* SIDECARTBAR  */
+
+
+/* .RightCartBar {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    background-color: #141e30;
+    width: 350px;
+    max-width: 85%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 999; 
+    overflow: hidden;
+    scrollbar-width: none;
+} */
+
+.RightCartBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* background-color: #141e30; */
+    background-color: whitesmoke;
+    width: 350px;
+    max-width: 85%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+
+.ShowCartBar {
+    transform: translateX(0%);
+}
+
+.HideCartBar {
+    transform: translateX(100%); 
+}
+
+
+.Head {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: rgb(8, 8, 8);
+    height: 8vh;   
+}
+
+.CartBarCart {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 21px;
+    margin-left: 10px;
+}
+
+.Head h1 {
+    position: absolute;
+    top: 2px;
+    left: 40px;
+    /* color: goldenrod; */
+    color: White;
+}
+
+
+.CartClose {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer; 
+}
+
+.CartBody {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 15px; */
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+}
+
+
+.BigCart {
+    position: absolute;
+    font-size: 4rem;
+    top: 40%;
+    left: 40%;
+    /* color: gainsboro; */
+}
+
+
+.RightCartBar p {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+   /* color: white; */
+}
+
+.BrowseShop {
+
+    position: absolute;
+    top: 55%;
+    left: 25%;
+}
+
+.BrowseShop button {
+    width: 180px;
+    height: 6vh; 
+    border-radius: 20px;
+    border: none;
+    background-color: brown; 
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+/* SideCartItem  */
+
+.cartItem{
+    position: relative;
+    background-color: whitesmoke;
+    width: 320px;
+    height: 21vh;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 20px;
+    transition: 0.5s ease;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.564);
+
+}
+
+.cartItem:hover {
+    transform: translateY(-5px);
+}
+
+.cartItem img {
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.151);
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+
+
+.cartItem h4 {
+    position: absolute; 
+    top: 15px;
+    left: 92px;
+    width: 190px;
+}
+
+.cartItem p {
+    color: rgb(2, 125, 33);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 60px; 
+    
+}
+
+
+
+
+.AddItemCancel {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    font-size: 0.91rem;
+    cursor: pointer; 
+}
+
+.AddItemCancel:hover {
+    border-radius: 50%;    
+   color: rgba(255, 0, 0, 0.578);
+}
+
+
+
+
+.overlays {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    z-index: 99;
+}
+
+.CartSidebar { 
+    z-index: 100;
+}
+
+
+.Cartitemline {
+    border: 0.1px solid rgba(0, 0, 0, 0.077);
+    width: 290px;
+    margin-top: 45px;
+    margin-left: -80px;
+    
+}
+
+
+.Minusbtn {
+    color: rgba(83, 81, 81, 0.714);     
+    font-size: 1.4rem;
+    position: absolute;
+    top: 115px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.cartItem h5 {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    left: 47px;
+}
+
+.Plusbtn {
+     color: rgba(63, 63, 63, 0.556);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 115px;
+    left: 60px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+ 
+.totalprice {
+    position: absolute; 
+    margin-top: 60px;
+    margin-left: 160px;
+
+}
+
+
+
+
+@media screen and (min-width:320px) and (max-width:768px) {
+
+
+
+
+.CartBarCart {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 15px; 
+    margin-left: 10px;
+}
+
+.Head h1 {
+    position: absolute;
+    top: -3px;
+    left: 40px;
+}
+
+.CartClose {
+    font-size: 1.5rem;
+    margin-top: 2px;  
+}
+
+.cartItem{
+    position: relative;
+    background-color: whitesmoke; 
+    width: 280px;
+    height: 19vh;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+
+}
+
+.cartItem:hover {
+    transform: translateY(-5px);
+}
+
+.cartItem img {
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.151);
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+
+
+.cartItem h4 {
+    position: absolute; 
+    top: 10px;
+    left: 60px;
+    width: 200px;
+    font-size: 0.92rem;
+}
+
+.cartItem p {
+    color: rgb(2, 125, 33);
+    font-size: 1.0rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 53px; 
+    left: 75px;
+    
+}
+
+
+
+
+.AddItemCancel {
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    font-size: 0.71rem;
+    cursor: pointer; 
+}
+
+.AddItemCancel:hover {
+    border-radius: 50%;    
+   color: rgba(255, 0, 0, 0.578);
+}
+
+
+
+.Cartitemline {
+    border: 0.1px solid rgba(0, 0, 0, 0.077);
+    width: 290px;
+    margin-top: 30px;
+    margin-left: -80px;
+    
+}
+
+
+.Minusbtn {
+    color: rgba(83, 81, 81, 0.714);     
+    font-size: 1.2rem;
+    position: absolute;
+    top: 90px;
+    left: 5px;
+    cursor: pointer;
+}
+
+.cartItem h5 {
+    position: absolute;
+    bottom: 10px;
+    font-size: 1rem;
+    left: 28px;
+}
+
+.Plusbtn {
+     color: rgba(63, 63, 63, 0.556);
+    font-size: 1.2rem;
+    position: absolute;
+    top: 90px;
+    left: 43px; 
+    font-weight: bolder;
+    cursor: pointer;
+}
+ 
+.totalprice {
+    position: absolute;
+    margin-top: 38px;
+    margin-left: 140px;
+    color: goldenrod; 
+    
+
+}
+
+
+.RightCartBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #141e30;
+    width: 350px;
+    max-width: 92%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+
+.CartBody {
+    height: 100%;
+   
+}
+
+
+.BigCart {
+    color: White;
+}
+.CartBody p {
+    color: white; 
+}
+
+
+
+.qtynumber{
+    position: absolute;
+    top: 90px;
+    margin-left: 0px;
+    font-size: 1rem;
+}
+
+.ViewFullCart button {
+    width: 200px;
+    max-width: 85%;
+    height: 5vh; 
+    margin-left: 5px;
+    border-radius: 1px;
+    border: none;
+    background-color: rgba(213, 43, 43, 0.979);
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer; 
+    font-weight: 700;
+}
+
+
+.BuyBtn button {
+
+    width: 200px;
+    max-width: 85%;
+    height: 6vh; 
+    max-height: 6vh;  
+    margin-left: 15px; 
+    margin-top: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(25, 19, 10, 0.979);
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    cursor: pointer; 
+    font-weight: 700;
+
+
+}
+
+} 
+
+
+/* CartLastbox  */
+
+
+.CartLastbox {
+    margin-top: auto;
+    width: 100%;
+    min-height: 30vh;
+    background-color: whitesmoke;
+    flex-shrink: 0;
+
+}
+
+
+
+.SubtotalValue { 
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem; 
+    padding: 12px; 
+}
+
+
+.CartLastline {
+    border: 0.1px solid rgba(0, 0, 0, 0.077);
+    width: 320px;
+    margin-top: -68px;
+    margin-left: -90px;
+}
+
+
+
+.TotalCartValue {
+    display: flex;
+    justify-content: space-between; 
+    font-size: 1.2rem; 
+    padding: 12px; 
+    color: goldenrod;
+
+}
+
+.ViewFullCart button {
+   
+    width: 300px;
+    height: 6vh; 
+    margin-left: 25px;
+    border-radius: 18px;
+    border: none;
+    /* background-color: rgba(213, 43, 43, 0.979); */
+    background-color: rgba(56, 137, 34, 0.518);
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer; 
+    font-weight: 700;
+}
+
+
+.BuyBtn  button {
+
+     width: 300px;
+    height: 7vh; 
+    margin-left: 25px;
+    margin-top: 5px;
+    border-radius: 18px;
+    border: none;
+    background-color: rgba(25, 19, 10, 0.979);
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer; 
+    font-weight: 700;
+
+
+}
+
+
+
+/* Add to Cart notification  */
+
+
+.cartContainer{
+    position: absolute;
+    width: fit-content;
+    margin-top: 17px;
+    margin-left: 5px;
+    /* display: none; */
+    right: 58px;
+}
+
+.cartIcon{
+    font-size: 2rem;
+}
+
+.cartBadge{
+    position: absolute;
+    top: -12px;
+    /* left: 1460px; */
+
+    background-color: red;
+    color: white;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,252 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.EmailSubsCribebox {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 24vh; 
+    width: 100%;
+}
+
+.EmailSubsCribebox h1 {
+    font-size: 1.40rem;
+    text-align: center; 
+    margin-top: 30px;
+}
+
+.EmailSubsCribebox p {
+    text-align: center;
+    color: gainsboro;
+    margin-top: -10px;
+}
+
+.Subscribe {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.Subscribe input {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+}
+
+/* .Subscribe input::placeholder {
+    color: gainsboro; 
+} */ 
+
+.Subscribe button {
+    width: 100px;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer; 
+}
+
+
+/* Footerbox */
+
+.Footerbox {
+    position: relative;
+    background-color: #0c111b;
+    color: white; 
+    display: flex;
+    height: 35vh; 
+}
+
+
+
+.Footerbox h2 {
+    position: absolute;
+    color: gold;
+    font-size: 2rem;
+    top: 15%;
+    left: 15%;
+    
+}
+
+.Footerbox p {
+    position: absolute;
+    top: 29%;
+    left: 15%;
+    color: gainsboro;
+}
+
+.Shopdata {
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    line-height: 40px;
+}
+
+.Shopdata ul {
+    list-style: none;
+}
+
+.Shopdata li {
+    cursor: pointer;
+}
+
+.Shopdata li:hover {
+    color: gold;
+}
+
+.Accountdata {
+    position: absolute;
+    left: 58%;
+    top: 15%;
+    line-height: 40px;
+}
+
+.Accountdata ul {
+    list-style: none;
+}
+
+.Accountdata li {
+    cursor: pointer;
+}
+
+.Accountdata li:hover {
+    color: gold;
+}
+
+
+.Help {
+    position: absolute;
+    left: 75%;
+    top: 15%;
+    line-height: 40px;
+}
+
+.Help ul {
+    list-style: none;
+}
+
+.Help li {
+    cursor: pointer;
+}
+
+.Help li:hover {
+    color: gold;
+}
+
+
+@media screen and (min-width:320px) and (max-width:768px) {
+
+
+    .EmailSubsCribebox {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 30vh; 
+    width: 100%;
+}
+
+.EmailSubsCribebox h1 {
+    font-size: 1.40rem;
+    text-align: center; 
+    margin-top: 30px;
+}
+
+.EmailSubsCribebox p {
+    text-align: center;
+    color: gainsboro;
+    margin-top: -10px;
+}
+
+.Subscribe {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.Subscribe input {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+}
+
+/* .Subscribe input::placeholder {
+    color: gainsboro; 
+} */ 
+
+.Subscribe button {
+    width: 140px;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer; 
+}
+
+    .Footerbox {
+      height: 100vh;
+      position: relative;
+    }
+
+    .Footerbox h2 {
+     position: absolute;
+     left: 20px;
+     top: 20px;
+    }
+
+    .Footerbox p {
+     position: absolute;
+     left: 20px;
+     top: 60px;
+    }
+
+    .Shopdata {
+        position: absolute;
+        top: 120px;
+        left: 20px;
+        line-height: 25px;
+    }
+
+    .Accountdata {
+        position: absolute;
+        top: 120px;
+        left: 200px;
+         line-height: 25px;
+    }
+
+    .Help {
+        position: absolute;
+        top: 380px;
+        left: 20px;
+         line-height: 25px;
+    }
+}
+
+
+.Copyright {
+    display: flex;
+    background-color: #080808;
+    height: 10vh;
+}
+
+.Copyright h1 { 
+    color: white;
+    font-size: 1rem;
+    margin: 30px auto;
+}
