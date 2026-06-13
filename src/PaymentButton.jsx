@@ -13,7 +13,7 @@ function PaymentButton() {
       // 2. options for Razorpay
       const options = {
         key: "rzp_test_T18WxjuzH98hhE",  
-        amount: order.amount,
+        amount: order.amount, 
         currency: order.currency,
         name: "My Store",
         description: "Product Purchase",

@@ -75,7 +75,7 @@ const handlePayment = async () => {
       handler: function (response) {
         alert("Payment Successful");
         console.log(response);
-      },
+      }, 
     };
 
     const razorpay = new window.Razorpay(options);

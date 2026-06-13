@@ -106,7 +106,7 @@ const product = {
     setQty((prev) => prev + 1);
   };
 // }
-
+ 
 // payment function
 
 const handlePayment = async () => {
