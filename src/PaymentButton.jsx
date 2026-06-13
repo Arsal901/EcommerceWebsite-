@@ -6,7 +6,8 @@ function PaymentButton() {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/create-order",
+        // "http://localhost:5000/create-order",
+        "ecommerce-website-x8ql.vercel.app/create-order",
         {
           amount: 499,
         }
@@ -54,4 +55,4 @@ function PaymentButton() {
   );
 }
 
-export default PaymentButton;
+export default PaymentButton; 

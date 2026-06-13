@@ -126,7 +126,7 @@ const handleAddToCartProductdetailPage = (product) => {
          <Card handleAddToCart={handleAddToCart} setOpenCartBar={setOpenCartBar}/>          
          <Onsale /> 
 
-          <PaymentButton/>  
+          {/* <PaymentButton/>   */}
          
      </> 
           } 
@@ -135,7 +135,7 @@ const handleAddToCartProductdetailPage = (product) => {
         <Route path="/product-detail/:id" element={<ProductDetailPage handleAddToCartProductdetailPage={handleAddToCartProductdetailPage} setOpenCartBar={setOpenCartBar}/> }  /> 
 </Routes>
 <FooterArea /> 
-{/* </BrowserRouter> */} 
+{/* </BrowserRouter> */}  
     
     </>
   )

@@ -25,6 +25,8 @@ import { Link } from "react-router-dom";
 
 import { useEffect } from "react";
 
+import axios from "axios";
+
 
 
 
@@ -43,6 +45,49 @@ useEffect(() => {
     document.body.style.overflow = "auto"; 
   }
 }, [openSideBar]);
+
+//payment function
+const handlePayment = async () => {
+  try {
+
+    const totalAmount = cart.reduce(
+      (acc, item) => acc + item.total,
+      0
+    );
+
+    const response = await axios.post(
+      // "http://localhost:5000/create-order",
+      "ecommerce-website-x8ql.vercel.app/create-order", 
+      {
+        amount: totalAmount,
+      }
+    );
+
+    const order = response.data;
+
+    const options = {
+      key: "rzp_test_T12oAdDJX9pN7o",
+      amount: order.amount,
+      currency: order.currency,
+      order_id: order.id,
+
+      name: "My Store",
+      description: "Cart Purchase",
+
+      handler: function (response) {
+        alert("Payment Successful");
+        console.log(response);
+      },
+    };
+
+    const razorpay = new window.Razorpay(options);
+
+    razorpay.open();
+
+  } catch (error) {
+    console.log(error);
+  }
+};
 
     return (
 
@@ -239,7 +284,7 @@ useEffect(() => {
     </div>
 
     <div className="BuyBtn">
-        <button>BUY NOW</button>  
+        <button onClick={()=> handlePayment()}>BUY NOW</button>  
     </div>
 </div>
 )}
