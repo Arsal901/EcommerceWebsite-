@@ -2,35 +2,25 @@ import axios from "axios";
 
 function PaymentButton() {
 
-  const handlePayment = async () => { 
+  const handlePayment = async () => {
     try {
-
-      const response = await axios.post(
-        // "http://localhost:5000/create-order", 
-        "https://ecommerce-website-x8ql.vercel.app/create-order", 
-        {
-          amount: 499, 
-        }
+      // 1. create order
+      const { data: order } = await axios.post(
+        "http://localhost:5000/create-order",
+        { amount: 499 }
       );
 
-      const order = response.data;
-
+      // 2. options for Razorpay
       const options = {
-        key: "rzp_test_T12oAdDJX9pN7o",
-
+        key: "rzp_live_T17SLJSvE08ly3",  
         amount: order.amount,
-
         currency: order.currency,
-
-        order_id: order.id,
-
         name: "My Store",
-
         description: "Product Purchase",
+        order_id: order.id,
 
         handler: function (response) {
           alert("Payment Successful");
-
           console.log(response);
         },
 
@@ -39,20 +29,21 @@ function PaymentButton() {
         },
       };
 
-      const razorpay = new window.Razorpay(options);
-
-      razorpay.open();
+      // 3. open checkout
+      const rzp = new window.Razorpay(options);
+      rzp.open();
 
     } catch (error) {
-      console.log(error);
+      console.log("Payment error:", error);
+      alert("Payment failed or backend not running");
     }
   };
 
   return (
-    <button onClick={handlePayment}> 
+    <button onClick={handlePayment}>
       Pay ₹499
     </button>
   );
 }
 
-export default PaymentButton;  
+export default PaymentButton;

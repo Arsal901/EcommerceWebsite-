@@ -53,25 +53,23 @@ const handlePayment = async () => {
     const totalAmount = cart.reduce(
       (acc, item) => acc + item.total,
       0
-    );
+    ); 
 
     const response = await axios.post(
-      // "http://localhost:5000/create-order", 
-        "https://ecommerce-website-x8ql.vercel.app/create-order",
-      {
-        amount: totalAmount, 
-      }
-    );
+      "http://localhost:5000/create-order", 
+  {
+  amount: 499,
+  });
 
     const order = response.data;
 
     const options = {
-      key: "rzp_test_T12oAdDJX9pN7o",
+      key: "rzp_live_T17SLJSvE08ly3", 
       amount: order.amount,
       currency: order.currency,
       order_id: order.id,
 
-      name: "My Store",
+      name: "Sahil Truth",
       description: "Cart Purchase",
 
       handler: function (response) {
@@ -284,7 +282,7 @@ const handlePayment = async () => {
     </div>
 
     <div className="BuyBtn">
-        <button onClick={()=> handlePayment()}>BUY NOW</button>  
+        <button onClick={()=> handlePayment}>BUY NOW</button>  
     </div>
 </div>
 )}

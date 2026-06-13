@@ -110,19 +110,15 @@ const product = {
 // payment function
 
 const handlePayment = async () => {
-  try {
-    const response = await axios.post(
-      // "http://localhost:5000/create-order", 
-      "https://ecommerce-website-x8ql.vercel.app/create-order",  
-      {
-        amount: product.price * qty,
-      }
-    );
+  try { 
+    const response = await axios.post("http://localhost:5000/create-order", {
+  amount: 499,
+}); 
 
     const order = response.data;
 
     const options = {
-      key: "rzp_test_T12oAdDJX9pN7o", 
+      key: "rzp_live_T17SLJSvE08ly3", 
       amount: order.amount,
       currency: order.currency,
       order_id: order.id,
@@ -141,7 +137,7 @@ const handlePayment = async () => {
     };
 
     const razorpay = new window.Razorpay(options);
-    razorpay.open();
+    razorpay.open(); 
 
   } catch (error) {
     console.log(error);
@@ -243,8 +239,8 @@ const handlePayment = async () => {
 
                     
     <div className="BuyNow">
-    <button onClick={()=> handlePayment()}>Buy Now</button> 
-    </div>
+    <button onClick={()=> handlePayment}>Buy Now</button> 
+    </div> 
    </div> 
 
 
