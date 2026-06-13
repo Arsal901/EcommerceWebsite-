@@ -10,6 +10,9 @@ import { useState, useEffect } from "react";
 
 import {BrowserRouter, Routes, Route } from "react-router-dom"; 
 
+import PaymentButton from "./PaymentButton";    
+
+
 
 function App() {
 
@@ -122,6 +125,8 @@ const handleAddToCartProductdetailPage = (product) => {
          <Products />
          <Card handleAddToCart={handleAddToCart} setOpenCartBar={setOpenCartBar}/>          
          <Onsale /> 
+
+          <PaymentButton/>  
          
      </> 
           } 
