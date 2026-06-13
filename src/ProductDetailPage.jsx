@@ -113,7 +113,7 @@ const handlePayment = async () => {
   try {
     const response = await axios.post(
       // "http://localhost:5000/create-order",
-      "https://ecommerce-website-x8ql.vercel.app/create-order", 
+      "http://ecommerce-website-x8ql.vercel.app/create-order",  
       {
         amount: product.price * qty,
       }
@@ -122,12 +122,12 @@ const handlePayment = async () => {
     const order = response.data;
 
     const options = {
-      key: "rzp_test_T12oAdDJX9pN7o",
+      key: "rzp_test_T12oAdDJX9pN7o", 
       amount: order.amount,
       currency: order.currency,
       order_id: order.id,
 
-      name: "My Store",
+      name: "Sahil Truth", 
       description: product.title,
 
       handler: function (response) {
