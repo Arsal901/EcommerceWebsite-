@@ -57,7 +57,7 @@ const handlePayment = async () => {
 
     const response = await axios.post(
       // "http://localhost:5000/create-order",
-      "ecommerce-website-x8ql.vercel.app/create-order", 
+        "https://ecommerce-website-x8ql.vercel.app/create-order",
       {
         amount: totalAmount,
       }
