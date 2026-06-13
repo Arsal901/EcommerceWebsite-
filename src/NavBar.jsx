@@ -64,7 +64,7 @@ const handlePayment = async () => {
     const order = response.data;
 
     const options = {
-      key: "rzp_live_T17SLJSvE08ly3", 
+      key: "rzp_test_T18WxjuzH98hhE", 
       amount: order.amount,
       currency: order.currency,
       order_id: order.id,
