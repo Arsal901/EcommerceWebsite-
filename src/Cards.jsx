@@ -9,7 +9,7 @@ function Card({handleAddToCart, setOpenCartBar}) {
 
     const Data = [
                     {
-                    id:"1", 
+                    id: 1, 
                     img:"Green Main.PNG", 
                     // style:{
                     //     width:"100%", 
@@ -22,20 +22,20 @@ function Card({handleAddToCart, setOpenCartBar}) {
                     price: 799.00,  
                     },
 
-                    {id:"2", 
+                    {id:2, 
                     img:"Hadith1.PNG",
                     title:"Muntakhab Ahadees Roman Urdu (HB)...",
                     rating:"4", 
                     price:375.00, 
                     },
 
-                    {id:"3",  
+                    {id:3,  
                     img:"Trace4.PNG",
                     title:"Trace Quran (Writable Quran) – Write, Learn..",
                     rating:"4.5",
                     price:699.00, 
                     },
-                     {id:"4", 
+                     {id:4, 
                         img:"that one.jpg",
                     title:"My QR Quran with Roman Urdu Arabic & Eng...", 
                     rating:"4.5",

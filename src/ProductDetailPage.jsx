@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 import { FiMinus } from "react-icons/fi";
@@ -7,14 +7,14 @@ import { GoPlus } from "react-icons/go";
 
 import { FaShoppingCart } from "react-icons/fa";
 
-import axios from "axios";
+import axios from "axios"; 
 
 
 
-function ProductDetailPage({handleAddToCartProductdetailPage, setOpenCartBar}) { 
+function ProductDetailPage({handleAddToCartProductdetailPage, setOpenCartBar, setCart}) { 
   const { id } = useParams();
 
-  const [changeImage, setChangeImage] = useState(null); 
+  const [changeImage, setChangeImage] = useState(null);  
 
   
 
@@ -34,10 +34,10 @@ function ProductDetailPage({handleAddToCartProductdetailPage, setOpenCartBar}) {
       The author has kept in mind this problem and hence has provided the solution by writing the Urdu in Roman English Script 
       so that people can read English very well and understand each bit of it as it is pronounced in Urdu.`}, 
       { id: 2, img: "/Green1.PNG", },
-      { id: 2, img: "/Green2.WEBP" },
-      { id: 3, img: "/Green3.PNG" },
-      { id: 4, img: "/Green4.JPEG"},
-      { id: 5, img: "/Green5.PNG" },
+      { id: 3, img: "/Green2.WEBP" },
+      { id: 4, img: "/Green3.PNG" },
+      { id: 5, img: "/Green4.JPEG"},
+      { id: 6, img: "/Green5.PNG" },
       
     ],
     2: [ 
@@ -79,20 +79,30 @@ function ProductDetailPage({handleAddToCartProductdetailPage, setOpenCartBar}) {
       { id: 5, img: "/Last5.jpg" },
     ],
   };
-
+ 
   const images = ProductImages[Number(id)] || [];
 
   useEffect(() => {
   setChangeImage(images[0].img);
 }, [id]);
+// useEffect(() => {
+//   if (images.length > 0) {
+//     setChangeImage(images[0].img);
+//   }
+// }, [id, images]);
 
 
 // const product = images[0];
 
-const product = {
-   ...images[0],
-   id: Number(id)
-}
+// const product = {
+//    ...images[0],
+//    id: Number(id)
+// }
+
+const product = images.length > 0 ? {
+  ...images[0],
+  id: Number(id)
+} : {};
 
 
 // function QuantityBox() {
@@ -109,40 +119,158 @@ const product = {
  
 // payment function
 
-const handlePayment = async () => {
-  try { 
-    const response = await axios.post("http://localhost:5000/create-order", {
-  amount: 499,
-}); 
 
-    const order = response.data;
+// function PaymentButton() 
+
+// const handlePayment = async (e) => { 
+//   if (e) e.preventDefault();
+
+//   try {
+//     // 1. create order
+//     const { data: order } = await axios.post(
+//       "http://127.0.0.1:5000/create-order",
+//       { amount: product.price * qty * 100 } // paise
+
+//     );
+
+//     console.log("Order:", order);
+
+//     // 2. check razorpay
+//     if (!window.Razorpay) {
+//       alert("Razorpay SDK not loaded");
+//       return;
+//     }
+
+//     // 3. options
+//     const options = {
+//       key: "rzp_test_T18WxjuzH98hhE",
+//       amount: order.amount,
+//       currency: order.currency,
+//       name: "My Store",
+//       description: "Product Purchase",
+//       order_id: order.id,
+
+//       handler: function (response) {
+//         console.log("Payment Success:", response);
+//         alert("Payment Successful");
+//       },
+
+//       theme: {
+//         color: "#3399cc",
+//       },
+//     };
+
+//     // 4. open
+//     const rzp = new window.Razorpay(options);
+//     rzp.open();
+
+//   } catch (error) {
+//     console.log("Payment error:", error);
+//     alert("Backend / order creation failed");
+//   }
+// };
+
+
+const handlePayment = async (e) => {
+  if (e) e.preventDefault();
+  console.log("KEY:", import.meta.env.VITE_RAZORPAY_KEY_ID); 
+
+  try {
+    const { data: order } = await axios.post(
+      "http://127.0.0.1:5000/create-order",
+      { amount: product.price * qty } // ✅ real price × qty
+    );
+
+    if (!window.Razorpay) {
+      alert("Razorpay SDK not loaded"); 
+      return;
+    }
+
+
 
     const options = {
-      key: "rzp_test_T18WxjuzH98hhE", 
+      // key: import.meta.env.VITE_RAZORPAY_KEY_ID,  // ✅ from .env
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_T1s9MY6yA3irHF",  // ✅ from .env
       amount: order.amount,
       currency: order.currency,
+      name: "My Store",
+      description: "Product Purchase",
       order_id: order.id,
 
-      name: "Sahil Truth", 
-      description: product.title,
+      handler: async function (response) {
+        try {
+          // ✅ verify payment on backend
+          const { data } = await axios.post(
+            "http://127.0.0.1:5000/verify-payment",
+            {
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+            }
+          );
 
-      handler: function (response) {
-        alert("Payment Successful");
-        console.log(response);
+          if (data.success) {
+            alert("Payment Successful & Verified ✅");
+          } else {
+            alert("Payment verification failed ❌");
+          }
+        } catch (err) {
+          console.error("Verification error:", err); 
+          alert("Could not verify payment");
+        }
       },
 
-      theme: {
-        color: "#3399cc",
-      },
+      theme: { color: "#3399cc" },
     };
 
-    const razorpay = new window.Razorpay(options);
-    razorpay.open(); 
+    const rzp = new window.Razorpay(options);
+    rzp.on("payment.failed", function (response) {
+      alert("Payment failed: " + response.error.description);
+    });
+    rzp.open();
 
   } catch (error) {
-    console.log(error);
+    console.error("Payment error:", error);
+    alert("Order creation failed");
   }
 };
+
+// const handleConfirmOrder = () => {
+//   const selectedProduct = {
+//     ...product,
+//     qty,
+//   };
+
+//   setCart([selectedProduct]);
+
+//   localStorage.setItem(
+//     "cart",
+//     JSON.stringify([selectedProduct])
+//   );
+// };
+
+
+const handleConfirmOrder = () => {
+  const selectedProduct = {
+    ...product,
+    qty,
+    total: product.price * qty,
+  };
+
+  // Sirf Buy Now product save hoga
+  localStorage.setItem(
+    "buyNowProduct",
+    JSON.stringify([selectedProduct])
+  );
+};
+        
+   
+   
+
+ 
+
+
+// export default PaymentButton;
 
   return (
     <div className="MainProductPage">
@@ -239,7 +367,15 @@ const handlePayment = async () => {
 
                     
     <div className="BuyNow">
-    <button onClick={()=> handlePayment}>Buy Now</button> 
+    {/* <button type="button" onClick={handlePayment}>Buy Now</button>    */}
+    <Link to={`/ConfirmOrder/${product.id}`}>
+  <button
+    type="button" 
+    onClick={handleConfirmOrder}
+  >
+    Buy Now 
+  </button>
+</Link>  
     </div> 
    </div> 
 

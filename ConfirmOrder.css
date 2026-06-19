@@ -1,0 +1,1405 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+
+#ConfirmOrderNav {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1001;
+}
+
+#ConfirmOrderNavLogo {
+   margin: 0px auto; 
+}
+
+.BackgroundContainer {
+  display: flex;
+  /* background-color: red;  */
+  background-color: white; 
+  width: 100%;
+  max-width: 100%;
+  height: 950px;
+  max-height: 100%;
+} 
+
+.ThreeTask {
+  display: flex;
+  gap: 150px;
+  position: absolute;
+  margin: 80px 200px;
+}
+
+.ThreeTask h1 {
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  width: 30px;
+  font-size: 1.5rem;
+  border: 1px solid gainsboro;
+}
+
+.ThreeTask h3 {
+  font-size: 0.81rem;
+}
+
+
+.AddressMain {
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 65%;
+  border-radius: 15px;
+  height: 650px;
+  max-height: 100%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.159);
+  padding: 20px;
+  margin: 200px 150px; 
+}
+
+
+.AddressMain h2 {
+font-size: 2rem;  
+}
+
+.Address {
+  padding: 10px;
+}
+
+
+.FullName input {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 95%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 10px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+
+}
+
+.Phonenumbers {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 10px;
+ 
+}
+
+.MobileNo input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+ padding-left: 8px;
+}
+
+.AlternateMobile input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+
+.fullAddress {
+  margin-top: 15px;
+}
+
+.fullAddress input {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 95%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 8px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.Landmark input {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 95%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 8px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.Landmark {
+  margin-top: 15px;
+}
+
+
+
+.CityCode {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 10px;
+  outline: none;
+  padding-left: 8px;
+}
+
+.PinCode input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.Town input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.State {
+  margin-top: 20px;
+  outline: none;
+  
+}
+
+.State input {
+  height: 30px;
+  width: 300px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(65, 65, 65, 0.477);
+  outline: none;
+  padding-left: 10px;
+}
+
+.State select{ 
+  margin-top: 15px;
+  width: 250px;
+  max-width: 100%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 8px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+
+.Continue {
+  margin-left: 330px;
+  margin-top: 30px;
+  height: 50px;
+  max-height: 100%;
+  width: 220px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(18, 137, 18, 0.74);
+  color: white;
+  cursor: pointer;
+  font-size: 0.91rem;
+  transition: 0.4s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.Continue:hover {
+  transform: scale(1.01); 
+  background-color: green;
+}
+
+
+
+
+/* ConfirmOrderDetails */
+
+.ConfirmOrderDetails { 
+  position: fixed;
+  left: 800px;
+  margin-top: 100px;
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 25%;
+  height: fit-content;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.173);
+}
+
+.ConfirmOrderDetails h4 {
+  font-size: 1.4rem;
+}
+
+.OrderSummary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.OrderSummary img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.OrderSummary h3 {
+  font-size: 0.9rem;
+  width: 250px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: absolute;
+  left: 90px;
+  top: 0px;
+}
+
+.OrderSummary p {
+  font-size: 0.9rem;
+  color: rgb(87, 86, 86);
+  margin-top: 25px;
+}
+
+.OrderSummary h5 {
+  font-size: 1rem;
+  color: green;
+  margin-top: 25px;
+  margin-left: 140px;
+}
+
+.subtotal,
+.Shipping,
+.Total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.subtotal p,
+.Shipping p,
+.Total h2 {
+  font-weight: 600;
+}
+
+.Shipping p {
+  color: rgb(77, 78, 80);
+  font-weight: 100;
+}
+
+.Shipping h3 {
+  color: green;
+}
+
+.Total {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 15px;
+}
+
+.Total p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green; 
+}
+
+
+/* 1-2-3 color change  */
+
+.activeStep h1 {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.activeStep h3 {
+  color: #28a745;
+}
+
+
+/* Summary Tab  */
+
+
+
+
+.SummaryTabConfirmOrderDetails { 
+  /* position: fixed; */
+  margin-left: 90px;
+  margin-top: 225px;
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 45%;
+  /* height: 665px;  */
+  height: fit-content; 
+  /* max-height: 100%; */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.173);
+}
+
+.SummaryTabConfirmOrderDetails h4 {
+  font-size: 1.4rem;
+}
+
+.SummaryTabOrderSummary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.SummaryTabOrderSummary img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.SummaryTabOrderSummary h3 {
+  font-size: 1.2rem;
+  width: 490px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: absolute;
+  left: 90px;
+  top: 0px;
+}
+
+.SummaryTabOrderSummary p {
+  font-size: 0.9rem;
+  color: rgb(87, 86, 86);
+  margin-top: 55px;
+} 
+
+.SummaryTabOrderSummary h5 {
+  font-size: 1rem; 
+  color: green;
+  margin-top: -20px;
+  margin-left: 320px;
+}
+
+.SummaryTabsubtotal,
+.SummaryTabShipping,
+.SummaryTabTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.SummaryTabsubtotal p,
+.SummaryTabShipping p,
+.SummaryTabTotal h2 {
+  font-weight: 600;
+}
+
+.SummaryTabSubtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+
+.SummaryTabSubtotal h3 {
+
+  color: rgba(0, 0, 0, 0.549);
+  font-weight: 100;
+}
+
+.SummaryTabShipping p {
+  color: rgb(77, 78, 80);
+  font-weight: 100;
+}
+
+.SummaryTabShipping h3 {
+  color: green;
+}
+
+.SummaryTabTotal {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.SummaryTabTotal p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green; 
+  margin-top: 20px;
+}
+
+
+
+.SummaryButtons {
+  display: flex;
+   justify-content: space-between;
+   margin-top: 25px;
+}
+
+.BackBtn {
+  width: 180px;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  max-height: 100%;
+  border: none;
+  background-color: black;
+  color: white; 
+  cursor: pointer;
+  font-size: 1rem; 
+}
+
+.PaymentBtn {
+   width: 190px;
+   max-width: 100%;
+  height: 50px;
+  max-height: 100%;
+  border-radius: 25px;
+  border: none;
+  background-color: green;
+  color: white; 
+  cursor: pointer;
+  font-size: 0.85rem; 
+}
+
+
+
+/* / PaymentSection */
+
+
+.PaymentSection {
+  /* background-color: #28a745; */
+  background-color: whitesmoke;
+  width: 600px;
+  max-width: 100%;
+  height: 300px;
+  max-height: 100%;
+  margin-top: 200px;
+  margin-left: 150px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.PaymentBox label {
+  display: flex;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.PayOnline {
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  background-color: aliceblue;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  text-align: center;
+  align-items: center;
+  width: 550px;
+  max-width: 100%;
+}
+
+.CashonDelivery {
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  margin-top: 10px;
+  background-color: aliceblue;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  text-align: center;
+  align-items: center;
+  width: 550px;
+  max-width: 100%;
+}
+
+.LastPaymentsectionbtns {
+   margin-top: 20px;
+   display: flex;
+   gap: 20px;
+   justify-content: space-around;
+}
+
+.BackofPayment {
+  background-color: black;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 140px;
+  border-radius: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.PaymentDone {
+  background-color: goldenrod;
+  color: black;
+  border: none;
+  height: 40px;
+  width: 140px;
+  border-radius: 20px;
+  cursor: pointer;
+  /* margin-top: 20px; */
+}
+
+
+/* /* This is a SummaryAddressBox Where we can See and Edit or Address */
+
+.SummaryAddressBox {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.148);
+  height: auto;
+   background-color: whitesmoke;
+  padding: 10px;
+  right: 330px;
+  position: fixed;
+  border-radius: 20px;
+  /* height: 280px; */
+  width: 380px;
+  max-width: 100%;
+  margin-top: 100px;
+}
+
+.SummaryAddressBox h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.SummaryAddressBox p {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  line-height: 25px;
+}
+
+.SummaryAddressBox button {
+  width: 200px;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer; 
+  border: none;
+  background-color: #28a745;
+  color: white;
+
+}
+
+
+
+
+/* yeh Card ke orderconfirm ka css hai  */
+
+.ConfirmOrderbyCard {
+  position: fixed;
+  right: 340px;
+  top: 0px;
+  margin-top: 100px;
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+  height: auto; 
+  max-height:100%;
+}
+
+.ConfirmOrderbyCard h4 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.OrderSummaryCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.OrderSummaryCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.OrderSummaryCard h3 {
+  font-size: 0.95rem;
+  width: 290px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.OrderSummaryCard p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.ProductInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ProductInfotext {
+  margin-left: -30px;
+  display: flex;
+  gap: 150px;
+  justify-content: space-around;
+}
+
+
+
+.Shipping {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+.Shipping p {
+  color: #555;
+}
+
+.Shipping h3 {
+  color: green;
+  font-size: 1rem;
+}
+
+.Total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.Total h2 {
+  font-size: 1.2rem;
+}
+
+.Total p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: green;
+}
+
+
+
+/* .Mobile Screen  */
+
+
+@media screen and (min-width:320px) and (max-width:768px) {
+  * {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+
+
+.ConfirmOrderDetails {
+  display: none;
+}
+
+.ConfirmOrderbyCard {
+  display: none; 
+}
+
+
+#ConfirmOrderNav {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1001;
+}
+
+#ConfirmOrderNavLogo {
+  margin: 0 100px; 
+}
+
+.BackgroundContainer {
+  display: flex;
+  /* background-color: red;  */
+  background-color: white; 
+  width: 100%;
+  max-width: 100%;
+  /* height: 985px; */
+  /* height: fit-content; */
+  /* min-height: 100vh; */
+  /* height: auto; */
+  max-height: 100%;
+
+} 
+
+.ThreeTask {
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  margin: 80px 40px;
+}
+
+.ThreeTask h1 {
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  width: 30px;
+  font-size: 1.5rem;
+  border: 1px solid gainsboro;
+}
+
+.ThreeTask h3 {
+  font-size: 0.71rem;
+}
+
+
+.AddressMain {
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 94%;
+  border-radius: 15px;
+  height: auto;
+  max-height: 100%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.159);
+  padding: 20px;
+  margin: 200px 12px; 
+  
+}
+
+
+.AddressMain h2 {
+font-size: 1.4rem;  
+}
+
+.Address {
+  margin-top: 20px;
+  padding: 0px;
+}
+
+
+.FullName input {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 95%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 10px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+
+}
+
+.Phonenumbers {
+  display: block;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 10px;
+ 
+}
+
+.MobileNo input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+ padding-left: 8px;
+}
+
+.AlternateMobile input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.AlternateMobile p {
+  margin-top: 15px;
+}
+
+
+.fullAddress {
+  margin-top: 15px;
+}
+
+.fullAddress input {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 95%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 8px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.Landmark input {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 95%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 8px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.Landmark {
+  margin-top: 15px;
+}
+
+
+
+.CityCode {
+  display: block;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 10px;
+  outline: none;
+  padding-left: 8px;
+}
+
+
+.PinCode {
+  margin-left: -7px;
+}
+
+.PinCode input{
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.Town {
+  margin-top: 8px;
+  margin-left: -7px;
+}
+
+.Town input{
+  margin-top: 5px;
+  width: 250px;
+  max-width: 100%;
+  height: 30px;
+  max-height: 95%; 
+  border-radius: 5px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+}
+
+.State {
+  margin-top: 10px;
+  outline: none;
+  
+}
+
+.State input {
+  width: 240px;
+}
+
+.State select{ 
+  margin-top: 10px;
+  width: 250px;
+  max-width: 100%;
+  height: 40px;
+  max-height: 95%; 
+  border-radius: 8px;
+  border: 1px solid rgba(44, 43, 43, 0.544);
+  outline: none;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+
+.Continue {
+  margin-left: 20px;
+  margin-top: 30px;
+  height: 50px;
+  max-height: 100%;
+  width: 220px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(18, 137, 18, 0.74);
+  color: white;
+  cursor: pointer;
+  font-size: 0.91rem;
+  transition: 0.4s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.Continue:hover {
+  transform: scale(1.01); 
+  background-color: green;
+}
+
+
+
+
+/* ConfirmOrderDetails */
+
+.ConfirmOrderDetails { 
+  position: fixed;
+  left: 800px;
+  margin-top: 100px;
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 25%;
+  height: fit-content;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.173);
+}
+
+.ConfirmOrderDetails h4 {
+  font-size: 1.4rem;
+}
+
+.OrderSummary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.OrderSummary img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.OrderSummary h3 {
+  font-size: 0.9rem;
+  width: 250px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: absolute;
+  left: 90px;
+  top: 0px;
+}
+
+.OrderSummary p {
+  font-size: 0.9rem;
+  color: rgb(87, 86, 86);
+  margin-top: 25px;
+}
+
+.OrderSummary h5 {
+  font-size: 1rem;
+  color: green;
+  margin-top: 25px;
+  margin-left: 140px;
+}
+
+.subtotal,
+.Shipping,
+.Total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.subtotal p,
+.Shipping p,
+.Total h2 {
+  font-weight: 600;
+}
+
+.Shipping p {
+  color: rgb(77, 78, 80);
+  font-weight: 100;
+}
+
+.Shipping h3 {
+  color: green;
+}
+
+.Total {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 15px;
+}
+
+.Total p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green; 
+}
+
+
+/* 1-2-3 color change  */
+
+.activeStep h1 {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.activeStep h3 {
+  color: #28a745;
+}
+
+
+/* Summary Tab  */
+
+
+.SummaryTabConfirmOrderDetails { 
+  /* position: fixed; */
+  margin-left: 12px;
+  margin-top: 185px;
+  background-color: whitesmoke;
+  width: 100%;
+  max-width: 92%;
+  height: 320px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.173);
+}
+
+.SummaryTabConfirmOrderDetails h4 {
+  font-size: 1.2rem;
+}
+
+.SummaryTabOrderSummary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.SummaryTabOrderSummary img {
+  width: 80px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.SummaryTabOrderSummary h3 {
+  font-size: 1rem;
+  width: 140px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: absolute;
+  left: 90px;
+  top: 0px;
+}
+
+.SummaryTabOrderSummary p {
+  margin-top: 40px;
+  margin-left: 0px;
+  font-size: 0.8rem;
+  color: rgb(87, 86, 86);
+}
+
+.SummaryTabOrderSummary h5 {
+  font-size: 1rem;
+  color: green;
+  margin-top: 45px;
+  margin-left: 70px;
+}
+
+.SummaryTabsubtotal,
+.SummaryTabShipping,
+.SummaryTabTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.SummaryTabsubtotal p,
+.SummaryTabShipping p,
+.SummaryTabTotal h2 {
+  font-weight: 600;
+}
+
+.SummaryTabSubtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+
+.SummaryTabSubtotal h3 {
+
+  color: rgba(0, 0, 0, 0.549);
+  font-weight: 100;
+}
+
+.SummaryTabShipping p {
+  color: rgb(77, 78, 80);
+  font-weight: 100;
+}
+
+.SummaryTabShipping h3 {
+  color: green;
+}
+
+.SummaryTabTotal {
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 15px;
+  margin-top: 0px;
+}
+
+.SummaryTabTotal p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green; 
+  margin-top: 0px;
+}
+
+
+
+.SummaryButtons {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+   justify-content: space-between;
+   background-color: whitesmoke;
+   height: 80px;
+   width: 100%;
+   border-top: 1px solid rgb(69, 68, 68);
+
+}
+
+.BackBtn {
+  width: 100px;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  max-height: 100%;
+  border: none;
+  background-color: black;
+  color: white; 
+  cursor: pointer;
+  font-size: 1rem; 
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.PaymentBtn {
+   width: 180px;
+   max-width: 100%;
+  height: 50px;
+  max-height: 100%;
+  border-radius: 15px;
+  border: none;
+  background-color: green;
+  color: white; 
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 15px;
+  margin-right: 0px; 
+  padding: 5px;
+}
+
+
+
+/* / PaymentSection */
+
+.ConfirmOrderDetails {
+  display: none;
+}
+
+
+
+
+
+
+.PaymentSection {
+  /* background-color: #28a745; */
+  background-color: whitesmoke;
+  width: 300px;
+  max-width: 94%;
+  height: 180px;
+  max-height: 100%;
+  margin-top: 200px;
+  margin-left: 12px;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.282);
+}
+
+.PaymentBox label {
+  display: flex;
+  gap: 10px;
+  margin-left: 0px;
+}
+
+.PayOnline {
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  background-color: aliceblue;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  text-align: center;
+  align-items: center;
+  width: 550px;
+  max-width: 98%;
+}
+
+.CashonDelivery {
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  margin-top: 10px;
+  background-color: aliceblue;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  text-align: center;
+  align-items: center;
+  width: 550px;
+  max-width: 98%;
+}
+
+.LastPaymentsectionbtns {
+   position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+   justify-content: space-between;
+   background-color: whitesmoke;
+   height: 80px;
+   width: 100%;
+   border-top: 1px solid rgb(69, 68, 68);
+}
+
+.BackofPayment {
+   width: 100px;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  max-height: 100%;
+  border: none;
+  background-color: black;
+  color: white; 
+  cursor: pointer;
+  font-size: 1rem; 
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.PaymentDone {
+   width: 170px;
+   max-width: 100%;
+  height: 50px;
+  max-height: 100%;
+  border-radius: 15px;
+  border: none;
+  background-color: green;
+  color: white; 
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 15px;
+  margin-right: 10px; 
+  padding: 5px;
+}
+
+
+/* /* This is a SummaryAddressBox Where we can See and Edit or Address */
+
+
+
+.SummaryAddressBox {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.148);
+   background-color: whitesmoke;
+  padding: 10px;
+  left: 20px;
+  top: 440px;
+  /* bottom: 200px;  */
+  position: absolute;
+  border-radius: 20px;
+  height: 300px;
+  width: 250px;
+  max-width: 100%;
+}
+
+.SummaryAddressBox h3 {
+  margin: 10px;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.SummaryAddressBox p {
+  margin-left: 10px;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.SummaryAddressBox button {
+  width: 200px;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer; 
+  border: none;
+  background-color: #28a745;
+  color: white;
+
+}
+
+}

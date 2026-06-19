@@ -46,46 +46,160 @@ useEffect(() => {
   }
 }, [openSideBar]);
 
-//payment function
+
+
+
+// const handlePayment = async () => {
+//   const totalAmount = cart.reduce((acc, item) => acc + item.total, 0);
+
+//   try {
+//     const { data: order } = await axios.post(
+//       "http://127.0.0.1:5000/create-order",
+//       { amount: totalAmount }
+//     );
+
+//     if (!window.Razorpay) {
+//       alert("Razorpay SDK not loaded");
+//       return;
+//     }
+
+//     const options = {
+//       key: import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_T1s9MY6yA3irHF",
+//       amount: order.amount,
+//       currency: order.currency,
+//       name: "My Store",
+//       description: "Product Purchase",
+//       order_id: order.id,
+
+//       handler: async function (response) {
+//         try {
+//           const { data } = await axios.post(
+//             "http://127.0.0.1:5000/verify-payment",
+//             {
+//               razorpay_order_id: response.razorpay_order_id,
+//               razorpay_payment_id: response.razorpay_payment_id,
+//               razorpay_signature: response.razorpay_signature,
+//             }
+//           );
+//           data.success ? alert("Payment Successful ✅") : alert("Verification failed ❌");
+//         } catch {
+//           alert("Could not verify payment");
+//         }
+//       },
+//       theme: { color: "#3399cc" },
+//     };
+
+//     const rzp = new window.Razorpay(options);
+//     rzp.on("payment.failed", (response) => {
+//       alert("Payment failed: " + response.error.description); 
+//     });
+//     rzp.open();
+
+//   } catch (error) {
+//     console.error("Payment error:", error);
+//     alert("Order creation failed");
+//   }
+// };
+        
+
 const handlePayment = async () => {
+  const totalAmount = cart.reduce((acc, item) => acc + item.total, 0);
+
   try {
+    const { data: order } = await axios.post(
+      "http://127.0.0.1:5000/create-order",
+      { amount: totalAmount }
+    );
 
-    const totalAmount = cart.reduce(
-      (acc, item) => acc + item.total,
-      0
-    ); 
-
-    const response = await axios.post(
-      "http://localhost:5000/create-order", 
-  {
-  amount: 499,
-  });
-
-    const order = response.data;
+    if (!window.Razorpay) {
+      alert("Razorpay SDK not loaded");
+      return;
+    }
 
     const options = {
-      key: "rzp_test_T18WxjuzH98hhE", 
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_T1s9MY6yA3irHF",
       amount: order.amount,
       currency: order.currency,
+      name: "My Store",
+      description: "Product Purchase",
       order_id: order.id,
 
-      name: "Sahil Truth",
-      description: "Cart Purchase",
+      handler: async function (response) {
+        try {
+          const { data } = await axios.post(
+            "http://127.0.0.1:5000/verify-payment",
+            {
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+            }
+          );
 
-      handler: function (response) {
-        alert("Payment Successful");
-        console.log(response);
-      }, 
+          if (data.success) {
+            alert("Payment Successful ✅");
+
+            // 🔥 CLEAR CART
+            setCart([]);
+            localStorage.removeItem("cart");
+
+            // 🔥 CLOSE CART UI
+            setOpenCartBar(false);
+
+            // 🔥 GO HOME
+            window.location.href = "/";
+          } else {
+            alert("Verification failed ❌");
+          }
+        } catch {
+          alert("Could not verify payment");
+        }
+      },
+
+      theme: { color: "#3399cc" },
     };
 
-    const razorpay = new window.Razorpay(options);
+    const rzp = new window.Razorpay(options);
+    rzp.on("payment.failed", (response) => {
+      alert("Payment failed: " + response.error.description);
+    });
 
-    razorpay.open();
+    rzp.open();
 
   } catch (error) {
-    console.log(error);
+    console.error("Payment error:", error);
+    alert("Order creation failed");
   }
 };
+
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
+
+   
+
+
+
+// const handleConfirmOrder = () => {
+//   const selectedProduct = {
+//     ...cart,
+//     qty,
+//   };
+
+//   setCart([selectedProduct]);
+
+//   localStorage.setItem(
+//     "cart",
+//     JSON.stringify([selectedProduct])
+//   );
+// };
+    
+        const handleConfirmOrder = () => {
+          setOpenCartBar(false);
+          localStorage.removeItem("buyNowProduct")
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+    
 
     return (
 
@@ -186,7 +300,7 @@ const handlePayment = async () => {
                 {/* )} */}
                 </div>
 
-                   <Link className="HomeLink" to="/"><h1>SAHILRAJPUT</h1></Link> 
+                   <Link className="HomeLink" to="/"><h1>SAHILRAJPUT</h1></Link>  
 
                 <div className="ShoppingCart">
                     <FaShoppingCart className="Shopcart" onClick={()=> setOpenCartBar(true)} />
@@ -281,9 +395,13 @@ const handlePayment = async () => {
         <button>VIEW FULL CART</button>
     </div>
 
-    <div className="BuyBtn">
-        <button onClick={()=> handlePayment}>BUY NOW</button>  
-    </div>
+      {/* <Link to={`/ConfirmOrder/${product.id}`}> */}
+      <div className="BuyBtn">
+  <Link to="/ConfirmOrder">
+  <button type="button" onClick={handleConfirmOrder}>Buy Now </button></Link> 
+</div>
+
+
 </div>
 )}
 
