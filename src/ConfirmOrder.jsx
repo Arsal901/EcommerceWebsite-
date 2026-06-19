@@ -165,9 +165,9 @@ const handlePayment = async (e) => {
     );
 
     if (!window.Razorpay) {
-      alert("Razorpay SDK not loaded");
+      alert("Razorpay SDK not loaded"); 
       return;
-    }
+    } 
 
     const options = {
       key:
@@ -390,8 +390,8 @@ const handlePayment = async (e) => {
               </select> */}
             </div>
 
-            <button className="Continue" type="submit" disabled={!isFormValid}>
-            {/* <button className="Continue" type="submit"> */} 
+            <button className="Continue" type="submit" disabled={!isFormValid}> 
+            {/* <button className="Continue" type="submit">  */}
                Continue to Summary
             </button>  
           </div> 
